@@ -100,3 +100,32 @@ $(document).ready(function() {
         $('#blue').fadeOut('slow');
     });
 });
+
+
+$(document).ready(function() {
+    $('.pink,.red').fadeTo('slow',0);
+    
+    
+    });
+    
+    $(document).ready(function() {
+    $('div').click(function() {
+        $(this).fadeOut('slow');
+    });
+});
+
+
+
+$(document).ready(function(){
+    
+    $('.pull-me').click(function(){
+        
+        $('.panel').slideToggle('slow');
+        });
+    
+    });
+    
+    
+    
+    
+var $h1=$("<h1>Hello </h1>");
