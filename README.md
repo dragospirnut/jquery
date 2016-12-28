@@ -41,3 +41,62 @@ $(document).ready(function(){
     
     
     });
+
+
+$(document).ready(function(){
+    
+    $('div').mouseenter(function(){
+        
+        $('div').fadeTo('fast',1);
+        
+        });
+     $('div').mouseleave(function(){
+         
+         $('div').fadeTo('fast',0.5);
+         
+         
+         }); 
+    
+    });
+
+
+$(document).ready(function() {
+    
+    
+    $('div').hide();
+    
+    
+    });
+
+$(document).ready(function() {
+    $('div').click(function() {
+        $('div').fadeOut('slow');
+    });
+});
+
+// Write your jQuery code on line 3!
+$(document).ready(function() {
+var $target=$('#numar4');
+    
+    $target.fadeOut('fast');
+});
+
+
+$(document).ready(function() {
+    
+    $('div').fadeIn('slow');
+    
+    
+    });
+
+$(document).ready(function() {
+    $('button').click(function() {
+       $('.vanish').fadeOut('slow'); 
+    });
+});
+
+$(document).ready(function() {
+    $('button').click(function() {
+        $('#blue').fadeOut('slow');
+    });
+});
