@@ -458,4 +458,370 @@ $(document).ready(function(){
     });
     
     
+    var main = function() {
+  
+  $('#top-text').keyup(function(){
     
+   $('.top-caption').text($('#top-text').val());
+    
+     });
+    
+    $('#bottom-text').keyup(function(){
+      
+      $('.bottom-caption').text($('#bottom-text').val());
+      
+    });
+ 
+ $('#image-url').keyup(function(){
+   
+  var toAdd = $('#image-url').val();
+   $('img').attr('src',toAdd);
+   
+ });
+  
+  
+};
+ 
+$(document).ready(main);
+
+var main = function() {
+  $('form').submit(function() {
+    var firstName = $('#first').val();
+    
+    if(firstName === "") {
+      
+     $('.first-name-error').text("Please enter your first name");
+    }
+
+    return false;
+    
+  });
+  
+  
+  $('form').submit(function(){
+    
+    var lastName = $('#last').val();    
+    
+    if (lastName === "") {
+        
+        $('.last-name-error').text("Please enter your last name");
+        
+        }
+    
+  });
+  
+  $('form').submit(function(){
+    
+    var email = $('#email').val();
+    
+    if (email === "" ) {
+      
+      
+      $('.email-error').text("Please enter your e-mail address");
+    } else if(email ==="dragospirnut@yahoo.com" ) {
+              
+       $('.email-error').text("This e-mail is already taken");       
+              
+              }
+    
+    
+  });
+  
+  
+  $('form').submit(function(){
+    
+    var password = $('#password').val();
+    
+    if (password === "") {
+      
+      $('.password-error').text("Please enter your password");
+      
+    } else if(password.length <8) {
+              
+              
+       $('.password-error').text("Short passwords are easy to guess. Try one with at least 8 characters");       
+              }
+    
+  });
+  
+};
+
+$(document).ready(main);
+
+var main = function() {
+  $('form').submit(function() {
+    
+    var comment = $('#comment').val();
+    
+    
+    if(comment !== "") {
+      var html = $('<li>').text(comment);
+     html.prependTo('.comments');
+      $('#comment').val("");
+      
+          }
+
+    return false;
+  });
+};
+
+$(document).ready(main);
+
+var main = function() {
+  $('.day').click(function(){
+    
+    $(this).next('div').toggle();
+    $(this).find('span').toggleClass('glyphicon-minus');
+  });
+  
+ 
+  
+};
+
+$(document).ready(main);
+
+
+
+var main = function() {
+  $('.nav li').click(function() {
+    var category = $(this).attr('class');
+
+    
+    $('.nav li').removeClass('active');
+    $(this).addClass('active');
+
+    if('nav-consumer' === category) {
+      
+      $('.thumbnail').removeClass('selected');
+     $('.consumer').addClass('selected');
+      
+    }else if (category === 'nav-mobile') {
+              
+              $('.thumbnail').removeClass('selected');
+      				$('.mobile').addClass('selected');
+              
+              } else if (category === "nav-commerce") {
+                
+                $('.thumbnail').removeClass('selected');
+                $('.commerce').addClass('selected');
+                
+                
+              } else if (category === "nav-enterprise") {
+                
+                $('.thumbnail').removeClass('selected');
+                $('.enterprise').addClass('selected');
+                
+              } else if (category === "nav-all") {
+                
+                $('.thumbnail').removeClass('selected');
+                
+              }
+    
+    
+  });
+};
+ 
+$(document).ready(main);
+
+var template = function(text) {
+  return '<p><input type="checkbox"><i class="glyphicon glyphicon-star"></i><span>' + text + '</span><i class="glyphicon glyphicon-remove"></i></p>';
+};
+
+var add = function(item) {
+  var html = template(item);
+  $('.list').append(html);  
+};
+
+var main = function() {
+  $('form').submit(function() {
+      
+    var text = $('#todo').val();
+    var html = template(text);
+        $('.list').append(html);
+    		$('#todo').val("");
+    
+    return false;  
+  });
+  
+   $(document).on("click",".glyphicon-star", function() {
+    $(this).toggleClass('active');
+  });
+  
+  $(document).on('click','.glyphicon-remove', function(){
+    $(this).parent().remove();
+  });
+  
+  if (annyang) { 
+          var commands = {
+        'add *item' : add,
+      };
+          annyang.addCommands(commands);
+          annyang.start();
+   };
+  
+};
+
+$(document).ready(main);
+
+var main = function() {
+ 
+  $('img').click(function(){
+    
+    $('.dropdown-menu').toggle(250);
+    
+  });
+};
+ 
+$(document).ready(main);
+
+
+var main = function() {
+  
+$('.notification').click(function(){
+  
+  $('.notification-menu').toggle();
+  
+});  
+  
+  $('.post .btn').click(function(){
+    
+    $(this).toggleClass('.btn');
+        
+  });
+  
+};
+
+$(document).ready(main);
+
+
+var main = function() {
+
+  $('.more-btn').click(function(){
+    
+    $(this).next().toggle('.more-menu');
+    
+  });
+  
+  $('.share').click(function(){
+    
+    $(this).next().toggle();
+  });
+  
+  $('.notification').click(function(){
+    
+    $(this).toggleClass('active');
+    
+  });
+  
+};
+
+$(document).ready(main);
+
+var main = function() {
+  
+  var cities = [
+    
+    "Romania",
+    "Ukraine",
+    "Great Britain",
+    "New Zeeland"
+    ];
+    $('#inputcity').autocomplete({
+    
+    source: cities
+    });
+    
+  
+};
+ 
+$(document).ready(main);
+
+
+
+
+var template = function(text) {
+  return '<p><input type="checkbox"><i class="glyphicon glyphicon-star"></i><span>' + text + '</span><i class="glyphicon glyphicon-remove"></i></p>';
+};
+
+var add = function(item) {
+  var html = template(item);
+  $('.list').append(html);  
+};
+
+var main = function() {
+  $('form').submit(function() {
+      
+    var text = $('#todo').val();
+    var html = template(text);
+        $('.list').append(html);
+    		$('#todo').val("");
+    
+    return false;  
+  });
+  
+   $(document).on("click",".glyphicon-star", function() {
+    $(this).toggleClass('active');
+  });
+  
+  $(document).on('click','.glyphicon-remove', function(){
+    $(this).parent().remove();
+  });
+  
+  if (annyang) { 
+          var commands = {
+        'add *item' : add,
+      };
+          annyang.addCommands(commands);
+          annyang.start();
+   };
+  
+};
+
+$(document).ready(main);
+
+
+
+var main = function(){  
+  $('img').click(function() {    
+    $('.dropdown-menu').toggle();
+  });
+  
+  $('form').submit(function(){
+    var email = $('#email').val();
+    var password = $('#password').val();     
+    if(email === "" ) {    
+      $('.email-error').text("Please enter your email");     
+     }    
+    if (password === "") {      
+      $('.password-error').text("Please enter your password");     
+    }
+    return false;  
+  });
+};
+$(document).ready(main);
+
+
+var main = function(){
+  
+ 
+  $('.dropdown').click(function () {
+    $(this).find('.dropdown-menu').toggle();
+  });
+};
+
+
+$(document).ready(main);
+
+var main = function (){
+  
+  $('.login').click(function(){
+    
+    $(this).find('.dropdown-menu').toggleClass();
+    
+  });
+  
+  $('#accordion').accordion();
+  
+}; 
+
+$(document).ready(main);
